@@ -5,7 +5,7 @@ return [
 	'rm_port' => 5672,
 	'rm_user' => 'kwhadmin',
 	'rm_pwd' => '123456',
-	'rm_vhost' => 'php',
+	'rm_vhost' => '/',
 
 	// 'rm_server' => '192.168.9.24',
 	// 'rm_port' => 5672,
