@@ -4,6 +4,9 @@ rabbitmq 服务端 3.3.3<br>
 amqp 版本 1.2.0<br>
 php-amqplib 版本 2.5.*
 
+##rabbitmqctl 命令操作<br>
+参见官方文档  http://previous.rabbitmq.com/v3_3_x/man/rabbitmqctl.1.man.html
+
 ##坑爹问题记录  出现问题查日志 （默认路径 /var/log/rabbitmq/rabbitmq*******）
 1/  amqp_error,access_refused,    "PLAIN login refused: user 'xxxx' - invalid credentials", <br>
 
