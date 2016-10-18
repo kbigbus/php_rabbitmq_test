@@ -13,9 +13,10 @@ $initConfig = array(
 );
 $connection = new AMQPConnection($initConfig);
 
-if(!$connection->connect()) {
-	exit('connect failed');
-}
+$connection->connect();
+// if(!$connection->connect()) {
+// 	exit('connect failed');
+// }
 //Create and declare channel
 $channel = new AMQPChannel($connection);
 //AMQPC Exchange is the publishing mechanism
@@ -28,5 +29,5 @@ $queue->setName($routing_key);
 $queue->setFlags(AMQP_DURABLE);
 $queue->declareQueue();
 $result = $exchange->publish('heiheihei', $routing_key);
-echo 'publish success';
+echo "publish success\n";
 $connection->disconnect();
