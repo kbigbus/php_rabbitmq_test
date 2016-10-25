@@ -1,8 +1,7 @@
 # php_rabbitmq_test
 利用PHP的amqp扩展 测试rabbitmq的相关特性<br>
 rabbitmq 服务端 3.3.3<br>
-amqp 版本 1.2.0<br>
-php-amqplib 版本 2.5.*
+amqp 版本 1.2.0 / php-amqplib 版本 2.5.* (两种客户端的区别)<br>
 
 ##rabbitmqctl 命令操作<br>
 参见官方文档  http://previous.rabbitmq.com/v3_3_x/man/rabbitmqctl.1.man.html
