@@ -22,9 +22,9 @@ php-amqplib 版本 2.5.*
 
 ###一对多
 1p to Nc 一个生成者对应多个消费者， 需要确认的问题有 <br>
-1、多进程的消息分配问题（rabbitmq自己解决）
-2、消息丢失恢复问题（一个消费者处理过程中挂掉了，保证当前这条消息能恢复处理。消息确认机制（ack/nack））
-3、rabbitmq 服务器挂掉（消息持久化durable，能解决大部分问题。 If you need a stronger guarantee then you can use publisher confirms.）
-4、多条复杂任务分配给一个c，多条简单任务分配给一个c。造成一个很忙一个很闲（消息公平调度，AMQPChannel::qos）
+1、多进程的消息分配问题（rabbitmq自己解决）<br>
+2、消息丢失恢复问题（一个消费者处理过程中挂掉了，保证当前这条消息能恢复处理。消息确认机制（ack/nack））<br>
+3、rabbitmq 服务器挂掉（消息持久化durable，能解决大部分问题。 If you need a stronger guarantee then you can use publisher confirms.）<br>
+4、多条复杂任务分配给一个c，多条简单任务分配给一个c。造成一个很忙一个很闲（消息公平调度，AMQPChannel::qos）<p>
 
 ###订阅
