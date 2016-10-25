@@ -8,19 +8,19 @@ use PhpAmqpLib\Message\AMQPMessage;
 $connection = new AMQPStreamConnection($config['rm_server'], $config['rm_port'], $config['rm_user'], $config['rm_pwd'], $config['rm_vhost']);
 $channel = $connection->channel();
 
-$channel->queue_declare('task_queue', false, true, false, false);
+$channel->exchange_declare('logs', 'fanout', false, false, false);
 
-echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
+list($queue_name, ,) = $channel->queue_declare("", false, false, true, false);
+
+$channel->queue_bind($queue_name, 'logs');
+
+echo ' [*] Waiting for logs. To exit press CTRL+C', "\n";
 
 $callback = function($msg){
-  echo " [x] Received ", $msg->body, "\n";
-  sleep(substr_count($msg->body, '.'));
-  echo " [x] Done", "\n";
-  $msg->delivery_info['channel']->basic_ack($msg->delivery_info['delivery_tag']);
+  echo ' [x] ', $msg->body, "\n";
 };
 
-$channel->basic_qos(null, 1, null);
-$channel->basic_consume('task_queue', '', false, false, false, false, $callback);
+$channel->basic_consume($queue_name, '', false, true, false, false, $callback);
 
 while(count($channel->callbacks)) {
     $channel->wait();
@@ -28,4 +28,3 @@ while(count($channel->callbacks)) {
 
 $channel->close();
 $connection->close();
-
