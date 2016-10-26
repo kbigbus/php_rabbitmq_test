@@ -8,20 +8,23 @@ use PhpAmqpLib\Message\AMQPMessage;
 $connection = new AMQPStreamConnection($config['rm_server'], $config['rm_port'], $config['rm_user'], $config['rm_pwd'], $config['rm_vhost']);
 $channel = $connection->channel();
 
-$channel->exchange_declare('direct_logs', 'direct', false, false, false);
+$channel->exchange_declare('topic_logs', 'topic', false, false, false);
 
-$severity = isset($argv[1]) && !empty($argv[1]) ? $argv[1] : 'info';
+$severity = isset($argv[1]) && !empty($argv[1]) ? $argv[1] : 'anonymous.info';
 
 $data = implode(' ', array_slice($argv, 2));
 if(empty($data)) $data = "Hello World!";
 
 $msg = new AMQPMessage($data);
 
-$channel->basic_publish($msg, 'direct_logs', $severity);
+$channel->basic_publish($msg, 'topic_logs', $severity);
 
 echo " [x] Sent ",$severity,':',$data," \n";
 
 $channel->close();
 $connection->close();
+
+
+
 
 

@@ -40,8 +40,16 @@ php-amqplib 范例皆参考于官网 http://www.rabbitmq.com/getstarted.html<br>
 2、生成者 publish消息到对应的 route-key<br>
 3、消费者 通过route-key 绑定 queue 与 exchange<br>
 
+###主题 topic
+与route 操作一致，只是route-key 可以做匹配  （多个词以 . 隔开，*代表一个词，#代表0个或多个词）<br>
+route-key 设置为 #，可替换 subscribe, route-key 设置为无*#的字符 可替换route
+
+##rpc
+利用中转队列rpc_queue
+
 
 ##总结
 1、simple/workqueue 没有exchange概念  直接通过 queue操作<br>
 2、subscribe/route 都是通过route-key 绑定 queue 与 exchange<br>
 3、需要绑定的处理 必须消费者在线的情况下才能收到消息（即publish是客户端必须在运行状态） 否则消息会丢失<br>
+4、exchange可以绑定多个route-key，即可以一条客户端下接收多个queue的数据<br>
