@@ -9,7 +9,7 @@ $connection = new AMQPStreamConnection($config['rm_server'], $config['rm_port'],
 $channel = $connection->channel();
 $channel->queue_declare('world', false, false, false, false);
 
-$msg = new AMQPMessage('Hello World!');
+$msg = new AMQPMessage('Hello World!', array('correlation_id'=>uniqid()));
 $channel->basic_publish($msg, '', 'world');
 
 echo " [x] Sent 'Hello World!'\n";

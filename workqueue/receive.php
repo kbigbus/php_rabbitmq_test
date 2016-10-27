@@ -44,9 +44,7 @@ switch($consumeType) {
 		echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 		$callback_func = function(AMQPEnvelope $message, AMQPQueue $q) use (&$exchange,&$routing_key) {
 			echo " [x] Received ", $message->getBody(), PHP_EOL;
-			sleep(1);
-			$q->nack($message->getDeliveryTag());//剔除重复进入队列
-			//$q->ack($message->getDeliveryTag());//确认消息 通知 rabbit删除
+			$q->nack($message->getDeliveryTag());
 		};
 		try{
 			$queue = new AMQPQueue($channel);

@@ -12,7 +12,8 @@ $channel->queue_declare('world', false, false, false, false);
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
 $callback = function($msg) {
-  echo " [x] Received ", $msg->body, "\n";
+  echo " [x] Received ", $msg->body, $msg->get('correlation_id'),"\n";
+
 };
 
 $channel->basic_consume('world', '', false, true, false, false, $callback);
