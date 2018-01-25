@@ -1,5 +1,7 @@
 {
     "require": {
-        "php-amqplib/php-amqplib": "2.5.*"
+        "php-amqplib/php-amqplib": "2.7.*",
+        "enqueue/amqp-lib":"0.8.15",
+        "enqueue/amqp-tools":"0.8.14"
     }
 }

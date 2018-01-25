@@ -1,7 +1,7 @@
 <?php
 namespace PhpAmqpLib\Connection;
 
-class AMQPLazyConnection extends AMQPConnection
+class AMQPLazyConnection extends AMQPStreamConnection
 {
     /**
      * Gets socket from current connection
@@ -30,7 +30,7 @@ class AMQPLazyConnection extends AMQPConnection
      */
     protected function getIO()
     {
-        if (!$this->io) {
+        if (empty($this->io)) {
             $this->connect();
         }
 

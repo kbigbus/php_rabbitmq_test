@@ -23,8 +23,8 @@ class AMQPDecimal
     protected $e;
 
     /**
-     * @param $n
-     * @param $e
+     * @param int $n
+     * @param int $e
      * @throws \PhpAmqpLib\Exception\AMQPOutOfBoundsException
      */
     public function __construct($n, $e)
@@ -43,5 +43,21 @@ class AMQPDecimal
     public function asBCvalue()
     {
         return bcdiv($this->n, bcpow(10, $this->e));
+    }
+
+    /**
+     * @return int
+     */
+    public function getE()
+    {
+        return $this->e;
+    }
+
+    /**
+     * @return int
+     */
+    public function getN()
+    {
+        return $this->n;
     }
 }

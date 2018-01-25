@@ -11,12 +11,38 @@ class ComposerStaticInit489a493c9af66397bbca48de5dc85a14
         array (
             'PhpAmqpLib\\' => 11,
         ),
+        'I' => 
+        array (
+            'Interop\\Queue\\' => 14,
+            'Interop\\Amqp\\' => 13,
+        ),
+        'E' => 
+        array (
+            'Enqueue\\AmqpTools\\' => 18,
+            'Enqueue\\AmqpLib\\' => 16,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'PhpAmqpLib\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
+        ),
+        'Interop\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/queue-interop/src',
+        ),
+        'Interop\\Amqp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/amqp-interop/src',
+        ),
+        'Enqueue\\AmqpTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-tools',
+        ),
+        'Enqueue\\AmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-lib',
         ),
     );
 

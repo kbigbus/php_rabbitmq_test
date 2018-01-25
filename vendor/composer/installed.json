@@ -1,17 +1,155 @@
 [
     {
-        "name": "php-amqplib/php-amqplib",
-        "version": "v2.5.2",
-        "version_normalized": "2.5.2.0",
+        "name": "queue-interop/queue-interop",
+        "version": "0.6.1",
+        "version_normalized": "0.6.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/php-amqplib/php-amqplib.git",
-            "reference": "eb8f94d97c8e79900accf77343dbd7eca7f58506"
+            "url": "https://github.com/queue-interop/queue-interop.git",
+            "reference": "38579005c0492c0275bbae31170edf30a7e740fa"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/eb8f94d97c8e79900accf77343dbd7eca7f58506",
-            "reference": "eb8f94d97c8e79900accf77343dbd7eca7f58506",
+            "url": "https://files.phpcomposer.com/files/queue-interop/queue-interop/38579005c0492c0275bbae31170edf30a7e740fa.zip",
+            "reference": "38579005c0492c0275bbae31170edf30a7e740fa",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5"
+        },
+        "time": "2017-08-10 11:24:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.6.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Interop\\Queue\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Promoting the interoperability of MQs objects. Based on Java JMS",
+        "homepage": "https://github.com/queue-interop/queue-interop",
+        "keywords": [
+            "MQ",
+            "jms",
+            "message queue",
+            "messaging",
+            "queue"
+        ]
+    },
+    {
+        "name": "queue-interop/amqp-interop",
+        "version": "0.7.2",
+        "version_normalized": "0.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/queue-interop/amqp-interop.git",
+            "reference": "03cfac42483d07ab45d1896a6a2e1d873a216bba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/queue-interop/amqp-interop/03cfac42483d07ab45d1896a6a2e1d873a216bba.zip",
+            "reference": "03cfac42483d07ab45d1896a6a2e1d873a216bba",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5",
+            "queue-interop/queue-interop": "^0.6@dev"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~5.4.0"
+        },
+        "time": "2018-01-04 09:52:06",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.7.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Interop\\Amqp\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "enqueue/amqp-tools",
+        "version": "0.8.14",
+        "version_normalized": "0.8.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-enqueue/amqp-tools.git",
+            "reference": "f375dee4d8609fca565a80df1c0f238bf0fe774f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-enqueue/amqp-tools/f375dee4d8609fca565a80df1c0f238bf0fe774f.zip",
+            "reference": "f375dee4d8609fca565a80df1c0f238bf0fe774f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6",
+            "queue-interop/amqp-interop": "^0.7@dev",
+            "queue-interop/queue-interop": "^0.6@dev"
+        },
+        "require-dev": {
+            "enqueue/null": "^0.8@dev",
+            "enqueue/test": "^0.8@dev",
+            "phpunit/phpunit": "~5.4.0"
+        },
+        "time": "2018-01-10 12:00:35",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.8.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Enqueue\\AmqpTools\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Message Queue Amqp Tools",
+        "homepage": "https://enqueue.forma-pro.com/",
+        "keywords": [
+            "AMQP",
+            "messaging",
+            "queue"
+        ]
+    },
+    {
+        "name": "php-amqplib/php-amqplib",
+        "version": "v2.7.0",
+        "version_normalized": "2.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-amqplib/php-amqplib.git",
+            "reference": "f48748546e398d846134c594dfca9070c4c3b356"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-amqplib/php-amqplib/f48748546e398d846134c594dfca9070c4c3b356.zip",
+            "reference": "f48748546e398d846134c594dfca9070c4c3b356",
             "shasum": ""
         },
         "require": {
@@ -19,17 +157,22 @@
             "ext-mbstring": "*",
             "php": ">=5.3.0"
         },
+        "replace": {
+            "videlalvaro/php-amqplib": "self.version"
+        },
         "require-dev": {
-            "phpunit/phpunit": "3.7.*"
+            "phpunit/phpunit": "^4.8",
+            "scrutinizer/ocular": "^1.1",
+            "squizlabs/php_codesniffer": "^2.5"
         },
         "suggest": {
             "ext-sockets": "Use AMQPSocketConnection"
         },
-        "time": "2015-08-11 12:30:09",
+        "time": "2017-08-03 22:06:21",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.4-dev"
+                "dev-master": "2.7-dev"
             }
         },
         "installation-source": "dist",
@@ -44,15 +187,88 @@
         ],
         "authors": [
             {
-                "name": "Alvaro Videla"
+                "name": "Alvaro Videla",
+                "role": "Original Maintainer"
+            },
+            {
+                "name": "John Kelly",
+                "email": "johnmkelly86@gmail.com",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Raúl Araya",
+                "email": "nubeiro@gmail.com",
+                "role": "Maintainer"
             }
         ],
-        "description": "This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
-        "homepage": "https://github.com/videlalvaro/php-amqplib/",
+        "description": "Formerly videlalvaro/php-amqplib.  This library is a pure PHP implementation of the AMQP protocol. It's been tested against RabbitMQ.",
+        "homepage": "https://github.com/php-amqplib/php-amqplib/",
         "keywords": [
             "message",
             "queue",
             "rabbitmq"
+        ]
+    },
+    {
+        "name": "enqueue/amqp-lib",
+        "version": "0.8.15",
+        "version_normalized": "0.8.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-enqueue/amqp-lib.git",
+            "reference": "eef44e0366be4ff93e9c1d775d1da2d8961dd6a5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://files.phpcomposer.com/files/php-enqueue/amqp-lib/eef44e0366be4ff93e9c1d775d1da2d8961dd6a5.zip",
+            "reference": "eef44e0366be4ff93e9c1d775d1da2d8961dd6a5",
+            "shasum": ""
+        },
+        "require": {
+            "enqueue/amqp-tools": "^0.8.5@dev",
+            "php": ">=5.6",
+            "php-amqplib/php-amqplib": "^2.7@dev",
+            "queue-interop/amqp-interop": "^0.7@dev",
+            "queue-interop/queue-interop": "^0.6@dev"
+        },
+        "require-dev": {
+            "enqueue/enqueue": "^0.8@dev",
+            "enqueue/null": "^0.8@dev",
+            "enqueue/test": "^0.8@dev",
+            "phpunit/phpunit": "~5.4.0",
+            "queue-interop/queue-spec": "^0.5.3@dev",
+            "symfony/config": "^2.8|^3|^4",
+            "symfony/dependency-injection": "^2.8|^3|^4"
+        },
+        "suggest": {
+            "enqueue/enqueue": "If you'd like to use advanced features like Client abstract layer or Symfony integration features"
+        },
+        "time": "2018-01-12 14:43:59",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.8.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Enqueue\\AmqpLib\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Message Queue Amqp Transport",
+        "homepage": "https://enqueue.forma-pro.com/",
+        "keywords": [
+            "AMQP",
+            "messaging",
+            "queue"
         ]
     }
 ]

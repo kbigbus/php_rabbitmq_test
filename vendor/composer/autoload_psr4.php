@@ -7,4 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PhpAmqpLib\\' => array($vendorDir . '/php-amqplib/php-amqplib/PhpAmqpLib'),
+    'Interop\\Queue\\' => array($vendorDir . '/queue-interop/queue-interop/src'),
+    'Interop\\Amqp\\' => array($vendorDir . '/queue-interop/amqp-interop/src'),
+    'Enqueue\\AmqpTools\\' => array($vendorDir . '/enqueue/amqp-tools'),
+    'Enqueue\\AmqpLib\\' => array($vendorDir . '/enqueue/amqp-lib'),
 );
